@@ -3,16 +3,22 @@
 </style>
 
 
-::root {
-    -- link-color: #ffffff;
-.global-header {
-  background: black;
+:root {
+    --link-color:#FFFFFF;
+    --font-family: 'Open Sans', sans-serif;
+    --font-family: 'Open Sans', sans-serif;
+    --heading-font-family: 'Raleway', sans-serif;
 }
 
-.global-header .main-navigation a
-.global-header .main-navigation a:visited
-{
-  color: #ffffff;
+.global-header {
+  background-color: #363636;
 }
-    color: #ffffff;
+
+.global-header .main-navigation a,
+.global-header .main-navigation a:visited {
+  color: var(--link-color);
+}
+
+.global-header .main-navigation a.active {
+  color:#FF6C00;
 }
