@@ -4,36 +4,32 @@
   const closeMenuBtn = document.querySelector(".js-close-menu");
   const menuLinks = document.querySelectorAll(".global-header__menu a");
 
-  const openMenu = () => {
-    mobileMenu.classList.add("is-open");
-    document.body.style.overflow = "hidden"; // Blochează scroll-ul
-    document.addEventListener("click", closeOnClickOutside); // Adăugăm event listener doar când meniul e deschis
-  };
-
-  const closeMenu = () => {
-    mobileMenu.classList.remove("is-open");
-    document.body.style.overflow = "auto"; // Permite scroll-ul
-    document.removeEventListener("click", closeOnClickOutside); // Eliminăm event listener-ul când meniul e închis
-  };
-
   const toggleMenu = () => {
-    mobileMenu.classList.contains("is-open") ? closeMenu() : openMenu();
-  };
-
-  const closeOnClickOutside = event => {
-    if (!mobileMenu.contains(event.target) && !openMenuBtn.contains(event.target)) {
-      closeMenu();
-    }
+    const isMenuOpen = mobileMenu.classList.contains("is-open");
+    mobileMenu.classList.toggle("is-open");
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden"; // Blochează scroll-ul
   };
 
   openMenuBtn.addEventListener("click", toggleMenu);
-  closeMenuBtn.addEventListener("click", closeMenu);
-  menuLinks.forEach(link => link.addEventListener("click", closeMenu));
+  closeMenuBtn.addEventListener("click", toggleMenu);
 
-  // Resetare meniu la schimbarea dimensiunii ecranului (>1200px)
+  // Închidere meniu la click pe un link din meniu
+  menuLinks.forEach(link => link.addEventListener("click", toggleMenu));
+
+  // Închidere meniu la click în afara lui
+  document.addEventListener("click", event => {
+    if (!mobileMenu.contains(event.target) && !openMenuBtn.contains(event.target)) {
+      if (mobileMenu.classList.contains("is-open")) {
+        toggleMenu();
+      }
+    }
+  });
+
+  // Resetare meniu când ecranul devine mare (>1200px)
   window.matchMedia("(min-width: 1200px)").addEventListener("change", e => {
     if (e.matches) {
-      closeMenu();
+      mobileMenu.classList.remove("is-open");
+      document.body.style.overflow = "auto";
     }
   });
 })();

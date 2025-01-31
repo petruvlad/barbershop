@@ -19,12 +19,12 @@
 .modal__content {
   background: var(--modal-bg);
   width: 90%;
-  max-width: 500px; // Evităm ca modalul să fie prea lat pe ecrane mari
-  padding: 40px;
+  max-width: 500px; // Prevent the modal from being too wide on large screens
+  padding: 2.5rem;
   height: auto;
   text-align: center;
   position: relative;
-  border-radius: 10px;
+  border-radius: 1rem;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
