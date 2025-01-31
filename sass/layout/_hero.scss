@@ -1,0 +1,53 @@
+/* Stil pentru mobil, si pentru 3 */
+.hero {
+  background-image: url("../images/hero-slider-img1/hero-img-m.jpg"); /* Fallback */
+  background-image: image-set(
+    "../images/hero-slider-img1/hero-img-m.jpg" 1x,
+    "../images/hero-slider-img1/hero-img-m@2x.jpg" 2x
+  );
+  background-size: cover;
+  flex: 1 0 auto;
+  padding: 40px 31px;
+
+  &__heading {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--heading-color);
+    margin-top: 20px;
+  }
+
+  &__sub-heading {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: #9da4bd;
+  }
+}
+
+/* Stil doar pentru tableta */
+@media screen and (min-width: $mobile-breakpoint) {
+  .hero {
+    background-image: image-set(
+      "../images/hero-slider-img1/hero-img-t.jpg" 1x,
+      "../images/hero-slider-img1/hero-img-t@2x.jpg" 2x
+    );
+  }
+}
+
+/* Stil doar pentru Desktop */
+@media screen and (min-width: $desktop-breakpoint) {
+  .hero {
+    background-image: image-set(
+      "../images/hero-slider-img1/hero-img-d.jpg" 1x,
+      "../images/hero-slider-img1/hero-img-d@2x.jpg" 2x
+    );
+    padding: 40px 55px 40px 100px;
+
+    &__heading {
+      font-size: 72px;
+      line-height: 85px;
+    }
+  }
+}

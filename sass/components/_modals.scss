@@ -1,0 +1,37 @@
+/* Modal - fereastra pop-up */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(25, 28, 38, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Conținutul modalului */
+.modal__content {
+  background: var(--modal-bg);
+  width: 90%;
+  max-width: 500px; // Evităm ca modalul să fie prea lat pe ecrane mari
+  padding: 40px;
+  height: auto;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Starea ascunsă a modalului */
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+}

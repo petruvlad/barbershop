@@ -1,0 +1,40 @@
+.global-aside {
+  display: none;
+  position: relative;
+}
+
+/* Stiluri pentru tableta */
+@media screen and (min-width: $mobile-breakpoint) {
+  .global-aside {
+    display: flex;
+    background: white;
+    flex-direction: column;
+    flex: 0 1 90px;
+    align-items: center;
+    padding: 30px;
+    justify-content: space-between;
+  }
+
+  .global-aside__logo {
+    transition: transform var(--transition);
+
+    &:focus,
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .global-aside__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .global-aside {
+    flex-basis: 90px;
+    padding: 55px;
+  }
+}

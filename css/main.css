@@ -1,24 +1,2 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700&display=swap');
-</style>
-
-
-:root {
-    --link-color:#FFFFFF;
-    --font-family: 'Open Sans', sans-serif;
-    --font-family: 'Open Sans', sans-serif;
-    --heading-font-family: 'Raleway', sans-serif;
-}
-
-.global-header {
-  background-color: #363636;
-}
-
-.global-header .main-navigation a,
-.global-header .main-navigation a:visited {
-  color: var(--link-color);
-}
-
-.global-header .main-navigation a.active {
-  color:#FF6C00;
-}
+/* Importare font Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');

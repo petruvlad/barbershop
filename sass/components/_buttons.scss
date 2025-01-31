@@ -1,0 +1,150 @@
+// Definirea variabilelor (dacă nu sunt deja definite)
+$accent-color: #ff6c00;
+$white-color: #ffffff;
+$transition-speed: 0.3s;
+$blur-bg: rgba(0, 0, 0, 0.7);
+
+$accent-color: #ff6c00;
+$white-color: #ffffff;
+$transition-speed: 0.3s;
+$burger-width: 40px;
+$burger-height: 4px;
+
+// 🔥 Butoane îmbunătățite 🔥
+.button {
+  display: inline-block;
+  padding: 12px 38px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  text-align: center;
+  border-radius: 25px;
+  transition: all $transition-speed ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px); // Efect subtil de ridicare
+  }
+}
+
+// 🔥 Buton din modal 🔥
+.button--from-modal {
+  background: $accent-color;
+  border: 1px solid darken($accent-color, 5%);
+  color: $white-color;
+
+  &:focus,
+  &:hover {
+    background: darken($accent-color, 5%);
+    border: 1px solid darken($accent-color, 10%);
+    transform: scale(1.05);
+  }
+}
+
+// 🔥 Buton transparent 🔥
+.button--transparent {
+  background: transparent;
+  border: 1px solid $accent-color;
+  color: $white-color;
+
+  &:hover,
+  &:focus {
+    background: $accent-color;
+    color: $white-color;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 108, 0, 0.5); // Efect de glow
+  }
+}
+
+// 🔥 Buton pentru meniul burger 🔥
+.button--toggle-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity $transition-speed ease-in-out, transform $transition-speed ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+// 🔥 Buton de închidere meniu 🔥
+.button--close-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $white-color;
+  transition: opacity $transition-speed ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// 🔥 Overlay pentru meniul burger 🔥
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); // Adăugăm efect modern de blur
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-speed ease-in-out;
+  z-index: 1000;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// 🔥 Meniu burger îmbunătățit 🔥
+.js-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $blur-bg;
+  backdrop-filter: blur(10px); // Blur modern
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform $transition-speed ease-in-out, opacity $transition-speed ease-in-out;
+  z-index: 1100;
+
+  &.is-open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// 🔥 Responsivitate 🔥
+@media screen and (max-width: 768px) {
+  .button {
+    padding: 10px 30px;
+    font-size: 10px;
+  }
+
+  .js-menu-container {
+    width: 90vw;
+    height: 100vh;
+  }
+}

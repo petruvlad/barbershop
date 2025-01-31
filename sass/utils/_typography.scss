@@ -1,0 +1,33 @@
+body {
+  font-family: var(--text-font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  font-family: var(--heading-font-family);
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 49px;
+  letter-spacing: 0.05em;
+}
+
+.small-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+}
+
+.copyrighted-text {
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.2em;
+  color: #595d6a;
+}

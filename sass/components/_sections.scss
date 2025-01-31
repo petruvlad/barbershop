@@ -1,0 +1,179 @@
+.section {
+  background: #363636;
+  color: var(--text-color);
+  letter-spacing: 0.02em;
+  padding: 100px 30px;
+
+  &--hero-section {
+    margin-top: 204px;
+    background: transparent;
+    padding: 0;
+  }
+
+  &--light .button--book-a-service {
+    color: #303030;
+
+    &:focus,
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .section__heading {
+    margin-top: 20px;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+  }
+
+  .section__heading + * {
+    margin-top: 20px;
+  }
+
+  .section address {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+  }
+}
+
+.section--light {
+  background: #ffffff;
+  color: #555555;
+}
+
+.section__sub-heading {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sub-heading-color);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background: var(--sub-heading-color);
+    height: 1px;
+    width: 60px;
+    margin-right: 20px;
+    vertical-align: middle;
+  }
+}
+
+.section--light h1,
+.section--light .section__heading {
+  color: var(--heading-alternate-color);
+}
+
+.section--light .section__sub-heading {
+  color: var(--heading-alternate-color);
+
+  &::before {
+    background: var(--heading-alternate-color);
+  }
+}
+
+.section__description > * + * {
+  margin-top: 20px;
+}
+
+.section--grey-bg {
+  background: #f7f7f7;
+}
+
+.section--with-two-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section--with-two-columns > * {
+  flex: 0 1 50%;
+}
+
+.section-images {
+  display: none;
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+  .section--with-two-columns {
+    flex-direction: row;
+  }
+
+  .section-images {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section--from-about .section-images {
+    gap: 30px;
+
+    img {
+      width: 330px;
+      height: 235px;
+    }
+  }
+}
+
+.section--from-contacts {
+  display: flex;
+  flex-direction: column;
+  background: url("../images/contact-section-bg.webp");
+  flex: 1 0 auto;
+  padding-left: 100px;
+  justify-content: space-between;
+}
+
+.section--from-booking {
+  background: transparent;
+  flex: 1 0 auto;
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+  .section--from-contacts {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .section--from-contacts {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  /* Section Generic */
+  .section {
+    padding: 130px 55px;
+  }
+
+  .section--from-about .section-images {
+    img {
+      width: 270px;
+      height: 445px;
+    }
+  }
+
+  .section--with-two-columns {
+    gap: 64px;
+  }
+
+  main .button--book-a-service {
+    margin-left: 0;
+  }
+
+  .section .section__heading {
+    font-size: 42px;
+    line-height: 49.31px;
+  }
+
+  .section-images {
+    flex-direction: row;
+  }
+}
